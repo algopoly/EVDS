@@ -1,0 +1,129 @@
+setwd("/Users/berkorbay/git_repositories/EVDS/")
+rm(list=ls(all=TRUE))#
+gc()#
+options(stringsAsFactors=FALSE)#
+options(repos="http://cran.rstudio.com/") #Set default repo#
+options(dplyr.width = Inf) #See all dplyr data table columns#
+options(scipen = 7)#
+options(java.parameters = "-Xmx8g")
+setwd("/Users/berkorbay/git_repositories/EVDS/")
+devtools::setup()
+?person
+install.packages("tidyjson")
+install.packages("RJSONIO")
+install.packages("jsonlite")
+?authenticate
+??authenticate
+httr::authenticate
+set.api.key
+??set.api.key
+?httr::GET
+httr::GET(url="https://evds2.tcmb.gov.tr/service/evds/",series="TP.DK.USD.A-TP.DK.EUR.A-TP.DK.CHF.A-TP.DK.GBP.A-TP.DK.JPY.A",startDate="01-10-2017",endDate="01-11-2017",type="json",key="0FDp4bYN0I")
+the_response <- httr::GET(url="https://evds2.tcmb.gov.tr/service/evds/",series="TP.DK.USD.A-TP.DK.EUR.A-TP.DK.CHF.A-TP.DK.GBP.A-TP.DK.JPY.A",startDate="01-10-2017",endDate="01-11-2017",type="json",key="0FDp4bYN0I")
+httr::content(the_response)
+the_response <-#
+httr::GET("https://evds2.tcmb.gov.tr/service/evds/series=TP.DK.USD.A-TP.DK.EUR.A-TP.DK.CHF.A-TP.DK.GBP.A-TP.DK.JPY.A&startDate=01-10-2017&endDate=01-11-2017&type=xml&key=0FDp4bYN0I")
+httr::content(the_response)
+GET("http://google.com/", path = "search")
+httr::GET("http://google.com/", path = "search")
+the_response <-#
+httr::GET("https://evds2.tcmb.gov.tr/service/evds/series=TP.DK.USD.A-TP.DK.EUR.A-TP.DK.CHF.A-TP.DK.GBP.A-TP.DK.JPY.A&startDate=01-10-2017&endDate=01-11-2017&type=json&key=0FDp4bYN0I")
+httr::content(the_response)
+jsonlite::fromJSON(httr::content(the_response))
+the_response <-#
+httr::GET("https://evds2.tcmb.gov.tr/service/evds/series=TP.DK.USD.A-TP.DK.EUR.A-TP.DK.CHF.A-TP.DK.GBP.A-TP.DK.JPY.A&startDate=01-10-2017&endDate=01-11-2017&type=json&key=0FDp4bYN0I")#
+#
+jsonlite::fromJSON(httr::content(the_response))
+json_content<-#
+httr::content(the_response)
+json_content
+jsonlite::fromJSON()
+?httr::content
+json_content<-#
+httr::content(the_response,as="raw")
+jsonlite::fromJSON(json_content)
+json_content
+json_content<-#
+httr::content(the_response,as="text")
+json_content
+jsonlite::fromJSON(json_content)
+set_evds_key <- function(api_key){#
+#
+  Sys.setenv(EVDS_KEY = api_key)#
+#
+}
+set_evds_key("0FDp4bYN0I")
+Sys.getenv("EVDS_KEY")
+the_response <-#
+  httr::GET("https://evds2.tcmb.gov.tr/service/evds/series=TP.DK.USD.A-TP.DK.EUR.A-TP.DK.CHF.A-TP.DK.GBP.A-TP.DK.JPY.A&startDate=01-10-2017&endDate=01-11-2017&type=json&key=",api_key)#
+#
+  json_content<-#
+  httr::content(the_response,as="text")#
+#
+  jsonlite::fromJSON(json_content)
+get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2017",end_date="01-11-2017"){#
+#
+  api_key = Sys.getenv("EVDS_KEY")#
+#
+  series = paste(series,collapes="-")#
+#
+  the_response <-#
+  httr::GET("https://evds2.tcmb.gov.tr/service/evds/series=",series,"&startDate=",start_date,"&endDate=",end_date,"&type=json&key=",api_key)#
+#
+  json_content<-#
+  httr::content(the_response,as="text")#
+#
+  jsonlite::fromJSON(json_content)#
+}
+get_series()
+get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2017",end_date="01-11-2017"){#
+#
+  api_key = Sys.getenv("EVDS_KEY")#
+#
+  series = paste(series,collapes="-")#
+#
+  the_response <-#
+  httr::GET(paste0("https://evds2.tcmb.gov.tr/service/evds/series=",series,"&startDate=",start_date,"&endDate=",end_date,"&type=json&key=",api_key))#
+#
+  json_content<-#
+  httr::content(the_response,as="text")#
+#
+  jsonlite::fromJSON(json_content)#
+}
+get_series()
+series=c("TP.DK.USD.A","TP.DK.EUR.A")
+api_key = Sys.getenv("EVDS_KEY")
+api_ke
+api_key
+paste(series,collapes="-")
+paste(series,collapse="-")
+get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2017",end_date="01-11-2017"){#
+#
+  api_key = Sys.getenv("EVDS_KEY")#
+#
+  series = paste(series,collapse="-")#
+#
+  the_response <-#
+  httr::GET(paste0("https://evds2.tcmb.gov.tr/service/evds/series=",series,"&startDate=",start_date,"&endDate=",end_date,"&type=json&key=",api_key))#
+#
+  json_content<-#
+  httr::content(the_response,as="text")#
+#
+  jsonlite::fromJSON(json_content)#
+}
+get_series()
+get_category_list<-function(){#
+#
+  api_key = Sys.getenv("EVDS_KEY")#
+#
+  series = paste(series,collapse="-")#
+#
+  the_response <-#
+  httr::GET(paste0("https://evds2.tcmb.gov.tr/service/evds/categories/type=json&key=",api_key))#
+#
+  json_content<-#
+  httr::content(the_response,as="text")#
+#
+  jsonlite::fromJSON(json_content)#
+}
+get_category_list()
