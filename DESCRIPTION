@@ -1,8 +1,8 @@
 Package: EVDS
 Title: API wrapper of Central Bank of Turkey's Electronic Data Distribution System (EVDS)
-Version: 0.0.0.9000
+Version: 0.1.0
 Authors@R: person("Berk", "Orbay", email = "berk.orbay@algopoly.com", role = c("aut", "cre"))
-Description: It is now very easy to import data from Türkiye Cumhuriyeti Merkez Bankası (TCMB) / Central Bank of Turkey (CBRT). This package is a wrapper for Elektronik Veri Dağıtım Sistemi (EVDS) / Electronic Data Distribution System API. 
+Description: It is now very easy to import data from Türkiye Cumhuriyeti Merkez Bankası (TCMB) / Central Bank of Turkey (CBRT). This package is a wrapper for Elektronik Veri Dağıtım Sistemi (EVDS) / Electronic Data Distribution System API.
 Depends: R (>= 3.4.1)
 License: MIT
 Encoding: UTF-8
