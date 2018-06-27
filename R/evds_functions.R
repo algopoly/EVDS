@@ -41,12 +41,20 @@ get_data_from_phrase <- function(the_phrase){
 #' Get series Function
 #'
 #' This function allows you to get series you want to work on from the EVDS website. You can also choose the dates you want to get the data from.
-#' @param series,start_date,end_date The desired series should be put in the series in a vector form. start_date and end_date are in form dd-mm-YYYY.
+#' @param series,start_date,end_date The desired series should be put in the series in a vector form. start_date and end_date are in form of `date_format`.
+#' @param date_format Date format. If Ymd, it is transformed to dd-mm-YYYY format because of CBRT EVDS requirements. It only accepts Ymd (YYYY-mm-dd) or dmY as input. (Default format: dmY)
 #' @export
 #' @examples
 #' get_series(series=c("",""), start_date = "dd-mm-YYYY", end_date = "dd-mm-YYYY")
 #' @title Get Series
-get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2017",end_date="01-11-2017"){
+get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2017",end_date="01-11-2017",date_format="dmY"){
+
+  if(date_format=="Ymd"){
+    start_date <- format(as.Date(start_date),"%d-%m-%Y")
+    end_date <- format(as.Date(end_date),"%d-%m-%Y")
+  }else if(date_format != "dmY"){
+    stop("Wrong date format!")
+  }
 
   series = paste(series,collapse="-")
 
@@ -55,7 +63,6 @@ get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2
   get_data_from_phrase(the_phrase)
 
 }
-
 #' Show Data Groups Function
 #'
 #' @export

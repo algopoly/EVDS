@@ -11,11 +11,10 @@ get_series(series = c("TP.DK.USD.A", "TP.DK.EUR.A"),
 \item{series, start_date, end_date}{The desired series should be put in the series in a vector form. start_date and end_date are in form dd-mm-YYYY.}
 }
 \description{
-Get series Function
-}
-\details{
-This function allows you to get series you want to work on from the EVDS website. You can also choose the dates you want to get the data from.
+Get series function allows you to get series you want to work on from the EVDS website.
+The series name should be in the format such as TP.DK.EUR.A (This the exchange rates between EURO to Turkish Lira.)
+You can also choose the dates you want to get the data from. The dates should be in the format of dd-mm-YYYY.
 }
 \examples{
-get_series(series=c("",""), start_date = "dd-mm-YYYY", end_date = "dd-mm-YYYY")
+\dontrun{get_series(series=c("TP.DK.EUR.A","TP.APIFON4"), start_date = "01-01-2011", end_date = "20-06-2018")}
 }
