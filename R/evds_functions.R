@@ -48,6 +48,7 @@ get_data_from_phrase <- function(the_phrase){
 #' get_series(series=c("",""), start_date = "dd-mm-YYYY", end_date = "dd-mm-YYYY")
 #' @title Get Series
 get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2017",end_date="01-11-2017",date_format="dmY"){
+<<<<<<< HEAD
 
   if(date_format=="Ymd"){
     start_date <- format(as.Date(start_date),"%d-%m-%Y")
@@ -55,7 +56,16 @@ get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2
   }else if(date_format != "dmY"){
     stop("Wrong date format!")
   }
+=======
+>>>>>>> dc4f67fa9a87637a0cf78606a287a8d6dbfa77a5
 
+  if(date_format=="Ymd"){
+    start_date <- format(as.Date(start_date),"%d-%m-%Y")  
+    end_date <- format(as.Date(end_date),"%d-%m-%Y")  
+  }else if(date_format != "dmY"){
+    stop("Wrong date format!")
+  }
+  
   series = paste(series,collapse="-")
 
   the_phrase <- paste0("https://evds2.tcmb.gov.tr/service/evds/series=",series,"&startDate=",start_date,"&endDate=",end_date)
