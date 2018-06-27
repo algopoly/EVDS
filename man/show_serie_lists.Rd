@@ -6,3 +6,12 @@
 \usage{
 show_serie_lists(ccode)
 }
+\arguments{
+\item{ccode}{Category code}
+}
+\description{
+Show Data Groups Function
+}
+\details{
+This function allows you to preview the series you want to work on from the EVDS website.
+}

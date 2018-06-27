@@ -1,10 +1,17 @@
-#'@export
-#'@title Set API KEY
+#' Set EVDS key
+#'
+#' This function allows you to set your API key. You will need this key to export data from the EVDS website.
+#' @param api_key Your API key from the EVDS website.
+#' @export
+#' @examples
+#' set_evds_key("YOURAPIKEY")
+#' @title Set API KEY
 set_evds_key <- function(api_key){
 
   Sys.setenv(EVDS_KEY = api_key)
 
 }
+
 
 #'@title Common Wrapper for Data Parsing
 get_data_from_phrase <- function(the_phrase){
@@ -31,8 +38,14 @@ get_data_from_phrase <- function(the_phrase){
 
 }
 
-#'@export
-#'@title Get Series
+#' Get series Function
+#'
+#' This function allows you to get series you want to work on from the EVDS website. You can also choose the dates you want to get the data from.
+#' @param series,start_date,end_date The desired series should be put in the series in a vector form. start_date and end_date are in form dd-mm-YYYY.
+#' @export
+#' @examples
+#' get_series(series=c("",""), start_date = "dd-mm-YYYY", end_date = "dd-mm-YYYY")
+#' @title Get Series
 get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2017",end_date="01-11-2017"){
 
   series = paste(series,collapse="-")
@@ -43,9 +56,10 @@ get_series <- function(series=c("TP.DK.USD.A","TP.DK.EUR.A"),start_date="01-10-2
 
 }
 
-
-#'@export
-#'@title Data Groups
+#' Show Data Groups Function
+#'
+#' @export
+#' @title Data Groups
 show_datagroups<-function(data_mode="all"){
 
   if(data_mode=="all"){
@@ -63,8 +77,11 @@ show_datagroups<-function(data_mode="all"){
 }
 
 
-#'@export
-#'@title Data Categories
+#' Show Data Categories Function
+#'
+#' This function allows you to preview the category of series you want to work on from the EVDS website.
+#' @export
+#' @title Data Categories
 show_categories<-function(){
 
   the_phrase<-
@@ -75,8 +92,13 @@ show_categories<-function(){
 
 }
 
-#'@export
-#'@title List of series based on a category code or name
+
+#' Show Data Groups Function
+#'
+#' This function allows you to preview the series you want to work on from the EVDS website.
+#' @param ccode Category code
+#' @export
+#' @title List of series based on a category code or name
 show_serie_lists<-function(ccode){
 
   the_phrase<-

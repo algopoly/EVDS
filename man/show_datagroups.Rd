@@ -6,3 +6,6 @@
 \usage{
 show_datagroups(data_mode = "all")
 }
+\description{
+Show Data Groups Function
+}
