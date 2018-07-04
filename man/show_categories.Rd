@@ -10,5 +10,5 @@ show_categories()
 Show Data Categories Function
 }
 \details{
-This function allows you to preview the category of series you want to work on from the EVDS website.
+This function allows you to preview the category of series you want to work on from the EVDS website. You need this function to preview category names.This category name could further used in previewing the data groups.
 }

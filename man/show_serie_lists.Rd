@@ -10,8 +10,8 @@ show_serie_lists(ccode)
 \item{ccode}{Category code}
 }
 \description{
-Show Data Groups Function
+Show Series Based on Category Function
 }
 \details{
-This function allows you to preview the series you want to work on from the EVDS website.
+This function allows you to preview the series from a specific data group you want to work on from the EVDS website.You can get the name of the datagroups by using `show_categories`function.
 }

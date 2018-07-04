@@ -32,9 +32,7 @@
 
 <meta property="og:title" content="Get Series — get_series" />
 
-<meta property="og:description" content="Get series function allows you to get series you want to work on from the EVDS website.
-The series name should be in the format such as TP.DK.EUR.A (This the exchange rates between EURO to Turkish Lira.)
-You can also choose the dates you want to get the data from. The dates should be in the format of dd-mm-YYYY." />
+<meta property="og:description" content="Get series Function" />
 <meta name="twitter:card" content="summary" />
 
 
@@ -112,35 +110,45 @@ You can also choose the dates you want to get the data from. The dates should be
 
     <div class="ref-description">
     
-    <p>Get series function allows you to get series you want to work on from the EVDS website.
-The series name should be in the format such as TP.DK.EUR.A (This the exchange rates between EURO to Turkish Lira.)
-You can also choose the dates you want to get the data from. The dates should be in the format of dd-mm-YYYY.</p>
+    <p>Get series Function</p>
     
     </div>
 
     <pre class="usage"><span class='fu'>get_series</span>(<span class='kw'>series</span> <span class='kw'>=</span> <span class='fu'>c</span>(<span class='st'>"TP.DK.USD.A"</span>, <span class='st'>"TP.DK.EUR.A"</span>),
-  <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"01-10-2017"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='st'>"01-11-2017"</span>)</pre>
+  <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"01-10-2017"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='st'>"01-11-2017"</span>, <span class='kw'>date_format</span> <span class='kw'>=</span> <span class='st'>"dmY"</span>)</pre>
     
     <h2 class="hasAnchor" id="arguments"><a class="anchor" href="#arguments"></a>Arguments</h2>
     <table class="ref-arguments">
     <colgroup><col class="name" /><col class="desc" /></colgroup>
     <tr>
       <th>series, start_date, end_date</th>
-      <td><p>The desired series should be put in the series in a vector form. start_date and end_date are in form dd-mm-YYYY.</p></td>
+      <td><p>The desired series should be put in the series in a vector form.</p></td>
+    </tr>
+    <tr>
+      <th>start_date, end_date</th>
+      <td><p>These are in form of `date_format`.</p></td>
+    </tr>
+    <tr>
+      <th>date_format</th>
+      <td><p>Date format. If Ymd, it is transformed to dd-mm-YYYY format because of CBRT EVDS requirements. It only accepts Ymd (YYYY-mm-dd) or dmY as input. (Default format: dmY)</p></td>
     </tr>
     </table>
     
+    <h2 class="hasAnchor" id="details"><a class="anchor" href="#details"></a>Details</h2>
+
+    <p>This function allows you to get series you want to work on from the EVDS website. You can also choose the dates you want to get the data from.</p>
+    
 
     <h2 class="hasAnchor" id="examples"><a class="anchor" href="#examples"></a>Examples</h2>
-    <pre class="examples"><span class='co'># NOT RUN {</span>
-<span class='fu'>get_series</span>(<span class='kw'>series</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"TP.DK.EUR.A"</span>,<span class='st'>"TP.APIFON4"</span>), <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"01-01-2011"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='st'>"20-06-2018"</span>)
-<span class='co'># }</span></pre>
+    <pre class="examples"><div class='input'><span class='fu'>get_series</span>(<span class='kw'>series</span><span class='kw'>=</span><span class='fu'>c</span>(<span class='st'>"TP.DK.USD.A"</span>,<span class='st'>"TP.APIFON4"</span>), <span class='kw'>start_date</span> <span class='kw'>=</span> <span class='st'>"20-05-2010"</span>, <span class='kw'>end_date</span> <span class='kw'>=</span> <span class='st'>"20-05-2018"</span>)</div><div class='output co'>#&gt; <span class='error'>Error in get_data_from_phrase(the_phrase): You should set your API key. See ?set_evds_key function.</span></div></pre>
   </div>
   <div class="col-md-3 hidden-xs hidden-sm" id="sidebar">
     <h2>Contents</h2>
     <ul class="nav nav-pills nav-stacked">
       <li><a href="#arguments">Arguments</a></li>
-            
+      
+      <li><a href="#details">Details</a></li>
+      
       <li><a href="#examples">Examples</a></li>
     </ul>
 
