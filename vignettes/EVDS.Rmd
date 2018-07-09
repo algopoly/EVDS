@@ -1,0 +1,41 @@
+---
+title: "EVDS Package"
+author: "Algopoly Info"
+date: "`r Sys.Date()`"
+output: rmarkdown::html_vignette
+vignette: >
+  %\VignetteIndexEntry{EVDS}
+  %\VignetteEngine{knitr::rmarkdown}
+  %\VignetteEncoding{UTF-8}
+---
+
+```{r setup, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+## How to get your API key?
+You have to sign up for the [EVDS website](https://evds2.tcmb.gov.tr/index.php?/evds/login) and then your API key will be located at your profile page. This key will is needed for further analysis. 
+
+
+## Some Starter Code
+
+Remember to replace "YOURAPIKEY" with your API key.
+
+```{r, eval = FALSE}
+devtools::install_github("algopoly/EVDS")
+library(EVDS)
+set_evds_key("YOURAPIKEY")
+# Get data on some series
+get_series()
+# See all Categories
+show_categories()
+# See all Data Groups
+dglist <- show_datagroups()
+head(dglist)
+# See all series from a data group
+show_serie_lists(ccode="bie_abanlbil")
+```
+
+

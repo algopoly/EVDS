@@ -1,0 +1,32 @@
+---
+output: github_document
+---
+
+<!-- README.md is generated from README.Rmd. Please edit that file -->
+
+```{r, echo = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>",
+  fig.path = "README-"
+)
+```
+
+# EVDS
+
+The goal of EVDS is to create a way to get data from the Central Bank of Rebuplic of Turkey's official data center, [Elektronik Veri Dagıtım Sistemi](https://evds2.tcmb.gov.tr/index.php?). This package allows it's users to get the data for the interest rates, currency exchange rates and etc. EVDS package is a tool which let's users to easily export data from the desired series. It also allows users to pick the dates they want to work with.  
+
+## Installation
+
+You can install EVDS from github with:
+
+```{r gh-installation, eval = FALSE}
+# install.packages("devtools")
+devtools::install_github("algopoly/EVDS")
+```
+
+## Example
+
+This is a basic example of how can someone use the package to make an analysis. In this [document](https://utkuhangenc.github.io/pj/files/Financial_Analysis.html), there is a sample analysis on the relationship between CBRT's monetary policies and the currency exchange rates. 
+
+
