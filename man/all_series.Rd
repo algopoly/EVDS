@@ -11,4 +11,6 @@ Show All Series Function
 }
 \details{
 This function allows you to preview all the series on the EVDS website.
+It also creates a xlxs file where you can look at the data in another format.
+This function helps user to determine the series they want to work on.
 }

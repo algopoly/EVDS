@@ -8,7 +8,9 @@ License: MIT
 Encoding: UTF-8
 LazyData: true
 Imports: httr,
-    jsonlite
+    jsonlite,
+    dplyr,
+    writexl
 RoxygenNote: 6.0.1
 Suggests: knitr,
     rmarkdown

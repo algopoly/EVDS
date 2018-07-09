@@ -15,9 +15,6 @@ get_series(series = c("TP.DK.USD.A", "TP.DK.EUR.A"),
 \item{date_format}{Date format. If Ymd, it is transformed to dd-mm-YYYY format because of CBRT EVDS requirements. It only accepts Ymd (YYYY-mm-dd) or dmY as input. (Default format: dmY)}
 }
 \description{
-Get series Function
-}
-\details{
 This function allows you to get series you want to work on from the EVDS website. You can also choose the dates you want to get the data from.
 }
 \examples{
