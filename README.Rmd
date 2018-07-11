@@ -14,7 +14,7 @@ knitr::opts_chunk$set(
 
 # EVDS
 
-The goal of EVDS is to create a way to get data from the Central Bank of Rebuplic of Turkey's official data center, [Elektronik Veri Dagıtım Sistemi](https://evds2.tcmb.gov.tr/index.php?). This package allows it's users to get the data for the interest rates, currency exchange rates and etc. EVDS package is a tool which let's users to easily export data from the desired series. It also allows users to pick the dates they want to work with.  
+The goal of EVDS is to create an efficient way to get data from the Central Bank of Rebuplic of Turkey's official data center, [Elektronik Veri Dagitim Sistemi](https://evds2.tcmb.gov.tr/index.php?). EVDS package is a tool which let's users to easily export data from the desired series. It allows users to preview and select the series they want to work with. Users can also input dates that they want to work on. 
 
 ## Installation
 

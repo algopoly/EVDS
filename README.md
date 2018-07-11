@@ -19,5 +19,5 @@ head(dglist)
 # See all series from a data group
 show_serie_lists(ccode="bie_abanlbil")
 # See all series on the website
-all_series()
+get_all_series()
 ```
