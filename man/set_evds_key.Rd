@@ -10,9 +10,6 @@ set_evds_key(api_key)
 \item{api_key}{Your API key from the EVDS website.}
 }
 \description{
-Set EVDS key
-}
-\details{
 This function allows you to set your API key. You will need this key to export data from the EVDS website.
 }
 \examples{

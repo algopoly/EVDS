@@ -1,136 +1,25 @@
-library(EVDS)
-set_evds_key("0FDp4bYN0I")
-get_series()
-Sys.getenv("EVDS_KEY")
+rm(list=ls(all=TRUE))#
+gc()#
+options(stringsAsFactors=FALSE)#
+options(repos="http://cran.rstudio.com/") #Set default repo#
+options(dplyr.width = Inf) #See all dplyr data table columns#
+options(scipen = 7)#
+options(java.parameters = "-Xmx8g")
 setwd("/Users/berkorbay/git_repositories/EVDS/")
 roxygen2::roxygenise()
-devtools::install()
-get_series()
-set_evds_key("XXX")
-get_series()
-the_phrase<-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroup=bie_yssk&startDate=01-06-2017&endDate=07-09-2017&type=json&key=",api_key)
-api_key = Sys.getenv("EVDS_KEY")
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/serieList/key=",api_key,"&type=json&code=bie_yssk")
-the_response <-#
-httr::GET(the_phrase)
-json_content<-#
-httr::content(the_response,as="text")
-json_content
-the_response
-the_response$status
-stop("Status 500. Check API Key.")
-get_category_list<-function(){#
-#
-  the_phrase <-#
-  paste0("https://evds2.tcmb.gov.tr/service/evds/categories/type=json")#
-#
-  get_data_from_phrase(the_phrase)#
-}
-get_category_list()
-get_data_from_phrase
-EVDS::get_data_from_phrase
-EVDS:::get_data_from_phrase
 roxygen2::roxygenise()
-devtools::install()
-get_category_list()
-EVDS::get_category_list()
-EVDS::get_seris()
-EVDS::get_series()
-get_data_from_phrase <- function(the_phrase){#
-#
-  api_key = Sys.getenv("EVDS_KEY")#
-#
-  the_phrase <- paste0(the_phrase,"&key=",api_key)#
-#
-  the_response <-#
-  httr::GET(the_phrase)#
-#
-  json_content<-#
-  httr::content(the_response,as="text")#
-#
-  if(json_content$status == 500){#
-    stop("Status 500. Check API Key.")#
-  }#
-#
-  jsonlite::fromJSON(json_content)#
-#
-}
-devtools::install()
-EVDS::get_series()
-set_evds_key("0FDp4bYN0I")
-devtools::install()
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/serieList/code=bie_yssk")#
-#
-get_data_from_phrase(the_phrase)
-api_key = Sys.getenv("EVDS_KEY")
-the_phrase <- paste0(the_phrase,"&type=json&key=",api_key)
-the_phrase
-the_response <-#
-  httr::GET(the_phrase)
-the_response
-json_content<-#
-  httr::content(the_response,as="text")
-json_content
-jsonlite::fromJSON(json_content)
-get_data_from_phrase(the_phrase)
-the_phrase
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/serieList/code=bie_yssk")#
-#
-get_data_from_phrase(the_phrase)
-the_phrase
-get_data_from_phrase
-rm(get_data_from_phrase)
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroup=bie_yssk&startDate=01-06-2017&endDate=07-09-2017&type=json&key=",api_key)
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/categories/")#
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroups/")#
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroups/mode=0")
-EVDS:::get_data_from_phrase(the_phrase)
-big_list <-EVDS:::get_data_from_phrase(the_phrase)
-big_list
-big_list[1,]
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroups/mode=1&code=2")#
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroups/mode=1")#
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroups/mode=1&code=bie_yssk")#
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/datagroups/mode=2&code=2")#
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/serieList/code=TP.DK.USD.A")#
-#
-EVDS:::get_data_from_phrase(the_phrase)
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/serieList/code=bie_dkdovizgn")#
-#
-EVDS:::get_data_from_phrase(the_phrase)
-the_phrase<-#
-paste0("https://evds2.tcmb.gov.tr/service/evds/categories/")
-EVDS:::get_data_from_phrase(the_phrase)
-.onLoad
-??.onLoad
-packageStartupMessage
-?packageStartupMessage
 roxygen2::roxygenise()
 devtools::install()
 library(EVDS)
+pkgdown::build_site()
+devtools::check()
 roxygen2::roxygenise()
+devtools::install()
+devtools::check()
+?.onAttach
 roxygen2::roxygenise()
 devtools::install()
+devtools::check()
+roxygen2::roxygenise()
 devtools::install()
-devtools::install()
+devtools::check()

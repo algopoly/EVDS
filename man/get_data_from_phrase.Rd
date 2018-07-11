@@ -6,3 +6,6 @@
 \usage{
 get_data_from_phrase(the_phrase)
 }
+\arguments{
+\item{the_phrase}{JSON string to send via GET parameter.}
+}

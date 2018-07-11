@@ -8,7 +8,7 @@ get_series(series = c("TP.DK.USD.A", "TP.DK.EUR.A"),
   start_date = "01-10-2017", end_date = "01-11-2017", date_format = "dmY")
 }
 \arguments{
-\item{series, start_date, end_date}{The desired series should be put in the series in a vector form.}
+\item{series}{The desired series should be put in the series in a vector form.}
 
 \item{start_date, end_date}{These are in form of `date_format`.}
 
@@ -18,5 +18,7 @@ get_series(series = c("TP.DK.USD.A", "TP.DK.EUR.A"),
 This function allows you to get series you want to work on from the EVDS website. You can also choose the dates you want to get the data from.
 }
 \examples{
+\dontrun{
 get_series(series=c("TP.DK.USD.A","TP.APIFON4"), start_date = "20-05-2010", end_date = "20-05-2018")
+}
 }
